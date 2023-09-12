@@ -1,14 +1,9 @@
-# офф образ энджинкс
 FROM nginx
 
-# копи кастом конфиг
-COPY site.conf /home/user/nginx-html/task/
+COPY site.conf /etc/nginx/
+COPY hello.html /usr/share/nginx/html
 
-# копируем статичные файлы
-COPY hello.html /home/user/nginx-html/task/
-
-# откроем порт 80. как указано в тз
 EXPOSE 80
 
-# CMD ["nginx", "-g", "daemon off;"]
+CMD ["nginx", "-g", "daemon off;"]
 

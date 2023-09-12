@@ -1,9 +1,9 @@
 server {
     listen 80;
-    server_name 81.30.189.44;
+    server_name localhost;
 
     location /hello {
         index index.html;
-        alias /etc/nginx/;
+        alias /home/user/nginx-html/task/hell
     }
 }
