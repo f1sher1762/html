@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Проверяем, что передан URL репозитория
+if [ -z "$1" ]; then
+  echo "Ошибка: не указан URL репозитория."
+  exit 1
+fi
+
+# Клонируем репозиторий из GitHub
+git clone "$1"
+
+# Переходим в  репозиторий
+REPO_NAME=$(basename "$1" .git)
+cd "$REPO_NAME" || exit
+
+# Запуск контейнеров 
+docker-compose up -d
